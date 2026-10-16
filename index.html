@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Mohammed-Ali — Electrical Engineering</title>
+<meta name="description" content="Electrical Engineering student at Western University. Stratospheric balloon payload software, on-device computer vision, PCB and SolidWorks design, Wi-Fi devices.">
+<meta property="og:title" content="Ali Mohammed-Ali — Electrical Engineering">
+<meta property="og:description" content="Electrical Engineering student at Western University. Stratospheric balloon payload software, on-device computer vision, PCB and SolidWorks design, Wi-Fi devices.">
+<meta property="og:image" content="assets/dr-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --surface: #ffffff;
+    --text: #1b1c1f;
+    --muted: #5d6068;
+    --line: #e4e2dd;
+    --accent: #3b2a8f;
+    --accent-soft: #eeebfa;
+    --chip: #f1f0ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121316;
+      --surface: #1a1b1f;
+      --text: #ecebe8;
+      --muted: #a2a4ab;
+      --line: #2c2d33;
+      --accent: #b3a6ff;
+      --accent-soft: #252140;
+      --chip: #24252b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+  nav .name { font-weight: 600; color: var(--text); white-space: nowrap; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; font-size: 15px; }
+  nav ul a { color: var(--muted); }
+  nav ul a:hover { color: var(--text); text-decoration: none; }
+
+  /* Hero */
+  header.hero { padding: 72px 0 48px; }
+  .hero h1 { font-size: clamp(34px, 5vw, 48px); line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .hero .role { font-size: 18px; color: var(--muted); margin: 0 0 22px; }
+  .hero .pitch { font-size: 19px; max-width: 680px; margin: 0 0 14px; }
+  .hero .avail {
+    display: inline-block; font-size: 14px; font-weight: 500;
+    background: var(--accent-soft); color: var(--accent);
+    padding: 5px 12px; border-radius: 999px; margin-bottom: 26px;
+  }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 8px; font-weight: 500; font-size: 15px;
+    border: 1px solid var(--line); color: var(--text); background: var(--surface);
+  }
+  .btn:hover { text-decoration: none; border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #121316; } }
+
+  /* Sections */
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 24px; font-weight: 600; }
+  h3 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; line-height: 1.3; }
+  .meta { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; }
+  ul.points { margin: 12px 0 14px; padding-left: 20px; }
+  ul.points li { margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .tag { font: 500 12.5px/1 "JetBrains Mono", ui-monospace, monospace; background: var(--chip); color: var(--muted); padding: 6px 9px; border-radius: 6px; }
+  .links { display: flex; flex-wrap: wrap; gap: 18px; font-weight: 500; font-size: 15px; }
+
+  /* Project cards */
+  .project { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; margin-bottom: 20px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 28px; margin: 18px 0 8px; }
+  .stat b { display: block; font-size: 26px; line-height: 1.1; color: var(--accent); letter-spacing: -0.01em; }
+  .stat span { font-size: 13.5px; color: var(--muted); }
+  .split { display: grid; grid-template-columns: 1fr 240px; gap: 28px; align-items: start; }
+  .phone video { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: #000; display: block; }
+  .caption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .pair img { width: 100%; border-radius: 8px; border: 1px solid var(--line); display: block; }
+  .note { font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; margin: 14px 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid2 .project { margin-bottom: 0; }
+
+  /* Experience */
+  .job { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .job:last-child { border-bottom: 0; }
+  .job .when { color: var(--muted); font-size: 14.5px; padding-top: 3px; }
+  .job h3 { font-size: 18px; }
+  .job p { margin: 4px 0 0; }
+
+  /* Writing */
+  .poster img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 180px 1fr; gap: 10px 20px; }
+  .skills dt { font-weight: 600; font-size: 15px; }
+  .skills dd { margin: 0; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+  footer .links { margin-bottom: 10px; }
+
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+    header.hero { padding: 48px 0 36px; }
+    .split, .grid2, .pair { grid-template-columns: 1fr; }
+    .phone { max-width: 260px; }
+    .project { padding: 22px; }
+    .job, .skills { grid-template-columns: 1fr; gap: 4px; }
+    .skills dd { margin-bottom: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">Ali Mohammed-Ali</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+<header class="hero">
+  <h1>Ali Mohammed-Ali</h1>
+  <p class="role">Electrical Engineering student · Western University · London, Ontario</p>
+  <p class="pitch">I build hardware and software that has to work on its own: camera control and a space-to-ground data link for a payload flown to 33&nbsp;km, and AI computer vision pipelines that run offline on a phone. I’ve also designed a Mars rover’s pan-tilt camera system in SolidWorks and built my own IoT smart-home device that recognizes phones joining a Wi-Fi network.</p>
+  <span class="avail">Looking for a 12- or 16-month co-op from May 2027</span>
+  <div class="btns">
+    <a class="btn primary" href="resume.pdf">Resume (PDF)</a>
+    <a class="btn" href="https://linkedin.com/in/am-uwo">LinkedIn</a>
+    <a class="btn" href="https://github.com/mmbaguette">GitHub</a>
+  </div>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <h3>POET-STRATOS: infrared camera payload for a stratospheric balloon</h3>
+    <p class="meta">Western University, Dept. of Physics &amp; Astronomy · Summer 2025 · flown with the Canadian Space Agency and CNES from Timmins, Ontario</p>
+    <p>A technology demonstration for POET, a proposed Canadian exoplanet space telescope: could an off-the-shelf infrared camera take usable astronomy images in near-space? I built the camera control and the link that sent commands up and images down. Nobody could touch the payload once it launched, so everything had to run unattended.</p>
+    <div class="stats">
+      <div class="stat"><b>~33 km</b><span>flight altitude</span></div>
+      <div class="stat"><b>3 hours</b><span>unattended flight</span></div>
+      <div class="stat"><b>100+</b><span>images returned</span></div>
+    </div>
+    <ul class="points">
+      <li>Wrote C++ control of a 12-bit infrared camera's exposure, gain and cooling over a serial link, reading back every setting after writing it so failed updates were caught.</li>
+      <li>Built a Python command and downlink system over a slow, lossy radio link, with packet retransmission and image compression, tested under simulated packet loss.</li>
+      <li>Found a camera firmware defect that cut off images at certain exposure times, worked with the manufacturer's engineers, and flew only settings I had verified.</li>
+      <li>Verified the payload's interface cable against the space agencies' requirements and wrote the payload operations manual.</li>
+    </ul>
+    <div class="tags"><span class="tag">C++</span><span class="tag">Python</span><span class="tag">RS-232</span><span class="tag">Camera Link</span><span class="tag">UDP</span><span class="tag">OpenCV</span></div>
+    <div class="links">
+      <a href="https://github.com/mmbaguette/POET-STRATOS-public">Project write-up →</a>
+      <a href="https://www.cbc.ca/news/canada/sudbury/western-university-weather-balloon-experiment-timmins-1.7619343">CBC News coverage →</a>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="split">
+      <div>
+        <h3>Diminished reality on iPhone: making real objects disappear</h3>
+        <p class="meta">Personal project · 2026 – present</p>
+        <p>Tap an object in the live camera view and the app removes it, fills in what was behind it, and keeps it gone as you walk around. It runs fully offline on an iPhone 13, which has 4&nbsp;GB of RAM and no LiDAR depth sensor.</p>
+        <ul class="points">
+          <li>Compared fill methods on real photos in a desktop test tool, and shipped only methods that are legal to use commercially, checked on Google Patents and against each AI model's licence.</li>
+          <li>Kept the phone cool: switching the tracking model to 16-bit let it run on the iPhone's AI chip, and capping how often it runs delayed thermal throttling from about 3.5 to 6 minutes.</li>
+          <li>When an object sits in a corner, the fill is split across both the wall and the floor.</li>
+        </ul>
+        <p class="note">Built with AI coding agents. I led the design, on-device testing, model selection and licensing decisions.</p>
+        <div class="tags"><span class="tag">Swift</span><span class="tag">ARKit</span><span class="tag">Core ML</span><span class="tag">Apple Vision</span><span class="tag">OpenCV</span></div>
+        <div class="links"><a href="https://github.com/mmbaguette/non-LiDAR-Diminished-Reality-on-iPhone">Project write-up →</a></div>
+      </div>
+      <figure class="phone" style="margin:0">
+        <video src="assets/dr-demo.mp4" poster="assets/dr-poster.jpg" autoplay muted loop playsinline controls></video>
+        <figcaption class="caption">Removing an object from a wall–floor corner, 3× speed.</figcaption>
+      </figure>
+    </div>
+    <div class="pair">
+      <figure style="margin:0">
+        <img src="assets/criminisi-test.jpg" alt="Criminisi inpainting test removing two TV remotes from a table" loading="lazy">
+        <figcaption class="caption">Criminisi fill test: remotes removed from a table.</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <img src="assets/xphoto-test.jpg" alt="OpenCV xphoto inpainting test removing a jar in front of floral wallpaper" loading="lazy">
+        <figcaption class="caption">OpenCV xphoto fill test: a jar removed from patterned wallpaper.</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <div class="grid2">
+    <article class="project">
+      <h3>Smart Walking Aid</h3>
+      <p class="meta">ECE 2242 design project · team of three · Winter 2026</p>
+      <p>A wearable obstacle-detection aid with an ultrasonic sensor on a servo, RFID, an LCD and fall detection.</p>
+      <ul class="points">
+        <li>Designed its Arduino-shield circuit board in Altium, with wider power traces for the servo's current spikes.</li>
+        <li>Debugged shorts during bring-up with a diagnostic schematic and continuity testing.</li>
+        <li>Measured performance and curve-fitted the results in MATLAB.</li>
+      </ul>
+      <p class="note">Rework damaged the board, so we demoed on a breadboard. My write-up covered what I'd change: a solder mask and a separate ground layer.</p>
+      <div class="tags"><span class="tag">Altium</span><span class="tag">Arduino</span><span class="tag">MATLAB</span></div>
+    </article>
+
+    <article class="project">
+      <h3>HERO: emergency response app</h3>
+      <p class="meta">Western engineering design competition · team of five · 2025</p>
+      <p>A mobile app coordinating rides, first aid and hazard reports during floods and forest fires.</p>
+      <div class="stats"><div class="stat"><b>1st</b><span>Transportation category</span></div><div class="stat"><b>2nd</b><span>overall</span></div></div>
+      <div class="tags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">WebSockets</span></div>
+      <div class="links"><a href="https://github.com/mmbaguette/HERO">Code →</a></div>
+    </article>
+
+    <article class="project">
+      <h3>Smart Home Greeter</h3>
+      <p class="meta">Personal project · 2022</p>
+      <p>Two microcontrollers that notice when a known phone joins the home Wi-Fi, greet the person by name on a screen at the door, and email the owner. It works by listening to ordinary network traffic, with no app on the phone.</p>
+      <div class="tags"><span class="tag">C++</span><span class="tag">ESP8266</span><span class="tag">Arduino</span></div>
+      <div class="links"><a href="https://github.com/mmbaguette/Arduino-Smart-Home-Welcomer">Write-up →</a></div>
+    </article>
+
+    <article class="project">
+      <h3>Fruit Ninja 3D</h3>
+      <p class="meta">Personal project</p>
+      <p>A webcam game that tracks your hands in live video so you can slice fruit in the air. Packaged as a standalone Windows app.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">MediaPipe</span><span class="tag">OpenCV</span></div>
+      <div class="links"><a href="https://github.com/mmbaguette/Fruit-Ninja-3D">Code →</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience &amp; design teams</h2>
+
+  <div class="job">
+    <div class="when">Sep 2026 – present</div>
+    <div>
+      <h3>Sunstang Solar Car · Solar Array Team</h3>
+      <p>Assigned to the solar power team: maximum power point tracking (power electronics that keep the solar array at peak output), then CAN bus for high-voltage motor control.</p>
+    </div>
+  </div>
+  <div class="job">
+    <div class="when">May – Aug 2025</div>
+    <div>
+      <h3>POET-STRATOS · Engineering Student</h3>
+      <p>Western University, Dept. of Physics &amp; Astronomy (Undergraduate Summer Research Internship award). Camera control and data link for the balloon payload above. Also set up a clean room for the flight optics and travelled on site to repair power systems and upgrade domes on the Colibri Observatory's robotic telescopes.</p>
+    </div>
+  </div>
+  <div class="job">
+    <div class="when">Oct 2024 – Apr 2025</div>
+    <div>
+      <h3>Western Engineering Mars Rover · Mechanical Team</h3>
+      <p>Designed a pan-tilt camera system in SolidWorks and drove it from an ESP32 over Wi-Fi, giving drivers a remote view at the Canadian International Rover Competition.</p>
+      <video src="assets/wemars-pan-tilt.mp4" autoplay muted loop playsinline controls style="width:100%;max-width:560px;border-radius:10px;border:1px solid var(--line);margin-top:12px;display:block"></video>
+      <p class="caption">The pan-tilt camera assembly in SolidWorks.</p>
+    </div>
+  </div>
+  <div class="job">
+    <div class="when">Sep 2023 – Apr 2025</div>
+    <div>
+      <h3>Western Engineering Robotics · Electrical &amp; Controls Team</h3>
+      <p>Connected a Raspberry Pi to the robot's motor controllers over CAN bus, soldered and assembled circuit boards, and wrote a technical report on the motor-control network for newer members.</p>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <h2>Writing</h2>
+  <div class="split" style="grid-template-columns: 1fr 1.3fr;">
+    <div>
+      <h3>Connecting the last 2 billion through high-altitude platforms</h3>
+      <p class="meta">Research poster and essay · Writing 2130 · 2026</p>
+      <p>About 2 billion people, mostly in rural areas, still aren't online. I argued that high-altitude platform stations, solar aircraft that circle about 20&nbsp;km up, are a better fit for rural coverage than satellites or cell towers, using ITU data and radio propagation sources.</p>
+      <div class="links">
+        <a href="assets/haps-poster.pdf">Poster (PDF) →</a>
+        <a href="assets/haps-essay.pdf">Essay (PDF) →</a>
+      </div>
+    </div>
+    <a class="poster" href="assets/haps-poster.pdf"><img src="assets/haps-poster.jpg" alt="Research poster: Connecting the Last 2 Billion to the Internet through High-Altitude Platform Stations" loading="lazy"></a>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills &amp; education</h2>
+  <dl class="skills">
+    <dt>Programming</dt><dd>C, C++, Python, Swift, Java, MATLAB</dd>
+    <dt>Hardware &amp; lab</dt><dd>Altium PCB design, soldering and rework, board bring-up, oscilloscope, multimeter, advanced electrical and machine shop training</dd>
+    <dt>Interfaces</dt><dd>RS-232, CAN bus, SPI, I2C, Camera Link, TCP/UDP; Arduino, ESP32, Raspberry Pi</dd>
+    <dt>CAD &amp; tools</dt><dd>SolidWorks, Intel Quartus, Git, Wireshark, OpenCV, Core ML</dd>
+    <dt>Languages</dt><dd>English, French (DELF B2)</dd>
+    <dt>Education</dt><dd>Bachelor of Engineering Science, Electrical Engineering, Western University, expected 2029. Undergraduate Summer Research Internship Award (2025), Dean's Honours Award (2024).</dd>
+  </dl>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://linkedin.com/in/am-uwo">LinkedIn</a>
+      <a href="https://github.com/mmbaguette">GitHub</a>
+    </div>
+    © 2026 Ali Mohammed-Ali
+  </div>
+</footer>
+
+</body>
+</html>
