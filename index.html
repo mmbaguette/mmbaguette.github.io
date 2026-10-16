@@ -137,6 +137,7 @@
   footer .links { margin-bottom: 10px; }
 
   @media (max-width: 760px) {
+    .poet-fig { width: 100% !important; }
     nav ul { display: none; }
     header.hero { padding: 48px 0 36px; }
     .split, .grid2, .pair { grid-template-columns: 1fr; }
@@ -179,7 +180,7 @@
   <h2>Projects</h2>
 
   <article class="project">
-    <figure style="margin:0 0 20px"><img src="assets/poet-launch.jpg" alt="Stratospheric balloons being inflated on the runway at sunset" style="width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center 60%;border-radius:10px;display:block"><figcaption class="caption">Balloon launch operations at the CSA/CNES base in Timmins, Ontario, 2025.</figcaption></figure>
+    <figure class="poet-fig" style="margin:0 0 20px;width:70%"><img src="assets/poet-launch.jpg" alt="Stratospheric balloons being inflated on the runway at sunset" style="width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center 60%;border-radius:10px;display:block"><figcaption class="caption">Balloon launch operations at the CSA/CNES base in Timmins, Ontario, 2025.</figcaption></figure>
     <h3>POET-STRATOS: infrared camera payload for a stratospheric balloon</h3>
     <p class="meta">Western University, Dept. of Physics &amp; Astronomy · Summer 2025 · flown with the Canadian Space Agency and CNES from Timmins, Ontario</p>
     <p>A technology demonstration for POET, a proposed Canadian exoplanet space telescope: can a commercial infrared camera take images for astronomy research in near-space? I built the camera control and the link that sent commands up and images down. Nobody could touch the payload once it launched, so everything had to run unattended.</p>
