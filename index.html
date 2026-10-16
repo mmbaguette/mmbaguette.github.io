@@ -120,6 +120,19 @@
   .skills dt { font-weight: 600; font-size: 15px; }
   .skills dd { margin: 0; color: var(--muted); }
 
+  /* Hero background: blurred lab photo */
+  html, body { overflow-x: clip; }
+  header.hero { position: relative; isolation: isolate; color: #fff; padding: 84px 0 68px; }
+  header.hero::before {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); z-index: -1;
+    background: linear-gradient(180deg, rgba(18,15,38,.62), rgba(18,15,38,.86)), url("assets/lab-bg.jpg") center 55% / cover no-repeat;
+  }
+  .hero .role { color: rgba(255,255,255,.8); }
+  .hero .avail { background: rgba(179,166,255,.22); color: #e6e0ff; }
+  .hero .btn { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.32); }
+  .hero .btn:hover { border-color: #fff; }
+  .hero .btn.primary { background: #fff; color: #2b1f6e; border-color: #fff; }
+
   footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
   footer .links { margin-bottom: 10px; }
 
