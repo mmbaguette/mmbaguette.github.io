@@ -102,6 +102,7 @@
   .stat b { display: block; font-size: 26px; line-height: 1.1; color: var(--accent); letter-spacing: -0.01em; }
   .stat span { font-size: 13.5px; color: var(--muted); }
   .split { display: grid; grid-template-columns: 1fr 240px; gap: 28px; align-items: start; }
+  .split.wide { grid-template-columns: 1fr 480px; }
   .phone video { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: #000; display: block; }
   .caption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
@@ -146,6 +147,7 @@
     nav ul { display: none; }
     header.hero { padding: 48px 0 36px; }
     .split, .grid2, .pair { grid-template-columns: 1fr; }
+    .split.wide { grid-template-columns: 1fr; }
     .phone { max-width: 260px; }
     .project { padding: 22px; }
     .job, .skills { grid-template-columns: 1fr; gap: 4px; }
@@ -287,7 +289,7 @@
   </div>
 
   <article class="project" style="margin-top:20px">
-    <div class="split">
+    <div class="split wide">
       <div>
         <h3>Upright: fall and injury detection</h3>
         <p class="meta">Hack Western 11 · team of four · Nov 2024</p>
