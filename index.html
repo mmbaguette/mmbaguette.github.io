@@ -104,6 +104,14 @@
   .split { display: grid; grid-template-columns: 1fr 240px; gap: 28px; align-items: start; }
   .split.wide { grid-template-columns: 1fr 400px; }
   .phone video { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: #000; display: block; }
+  .blog { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .subhead { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 18px; font-weight: 600; }
+  .post + .post { margin-top: 26px; }
+  .post h3 { font-size: 19px; }
+  .post h3 a { color: inherit; text-decoration: none; }
+  .post h3 a:hover { text-decoration: underline; }
+  .post .meta { margin-bottom: 8px; }
+  .post p { margin: 0 0 4px; }
   .caption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
   .pair img { width: 100%; border-radius: 8px; border: 1px solid var(--line); display: block; }
@@ -375,11 +383,17 @@
     </div>
     <a class="poster" href="assets/haps-poster.pdf"><img src="assets/haps-poster.jpg" alt="Research poster: Connecting the Last 2 Billion to the Internet through High-Altitude Platform Stations" loading="lazy"></a>
   </div>
-  <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--line)">
-    <h3>One of the easiest (engineering) degrees you can get at Western</h3>
-    <p class="meta">Blog post · Substack · Nov 2026</p>
-    <p>Criticisms of a program where you can graduate without learning: exams passed by memorizing past answers, assignments done by AI, and fundamental courses like RF Circuits being cut.</p>
-    <div class="links"><a href="https://alimohammedali3.substack.com/p/one-of-the-easiest-engineering-degrees">Read on Substack →</a></div>
+  <div class="blog">
+    <p class="subhead">Blog</p>
+    <!-- BLOG:START -->
+    <div class="post">
+      <h3><a href="https://alimohammedali3.substack.com/p/one-of-the-easiest-engineering-degrees">One of the easiest (engineering) degrees you can get at Western</a></h3>
+      <p class="meta">Nov 2026</p>
+      <p>Criticisms of a program where you can graduate without learning</p>
+      <div class="tags"><span class="tag">western</span><span class="tag">ece</span><span class="tag">eng</span><span class="tag">uwo</span></div>
+    </div>
+    <!-- BLOG:END -->
+    <div class="links" style="margin-top:14px"><a href="https://alimohammedali3.substack.com">All posts on Substack →</a></div>
   </div>
 </section>
 
